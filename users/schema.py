@@ -5,6 +5,7 @@ from graphql_auth.schema import UserQuery, MeQuery
 
 class AuthMutations(graphene.ObjectType):
     register = mutations.Register.Field()
+    verify_account = mutations.VerifyAccount.Field()
 
 
 
