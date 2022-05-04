@@ -134,6 +134,14 @@ GRAPHENE = {
     ]
 }
 
+GRAPHQL_JWT ={
+    'JWT_ALLOW_ANY_CLASSES': [
+        'graphql_auth.mutations.Register'
+    ],
+    'JWT_VERIFY_EXPIRATION' : True,
+    'JWT_LONG_RUNNING_REFRESH_TOKEN' : True
+}
+
 
 AUTHENTICATION_BACKENDS = [
     # "graphql_jwt.backends.JSONWebTokenBackend",
@@ -144,5 +152,7 @@ AUTHENTICATION_BACKENDS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
